@@ -1,0 +1,32 @@
+ 
+ <form #form="ngForm"  (submit)="onSubmit(form)">
+ <mat-form-field>
+  <mat-label>Seleccione un producto</mat-label>
+
+  <mat-select name="producto" #producto="ngModel"  [(ngModel)]="service.formData.producto">
+
+    <mat-option *ngFor="let emp of lista" [value]="emp">
+      {{emp.nombre}}
+    </mat-option>
+  </mat-select>
+
+</mat-form-field>
+
+    <mat-form-field>
+   <input matInput type="number" name="cantidad" #cantidad="ngModel"  [(ngModel)]="service.formData.cantidad" class ="form-control" matInput placeholder="Cantidad">
+  </mat-form-field>
+
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatepicker" name="fecha" #fecha="ngModel"  [(ngModel)]="service.formData.fecha" placeholder="Seleccione una fecha">
+
+  <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+  <mat-datepicker #myDatepicker></mat-datepicker>
+</mat-form-field>
+
+ <input type="hidden"  name="nombre" #nombre="ngModel"  [(ngModel)]="service.formData.nombre">  
+
+<button style="width: 100%;margin: auto;"class="btn btn-outline-success my-2 my-sm-0" type="submit"><span>Registrar Venta</span></button>
+<button style="width: 100%;margin: auto" class="btn btn-outline-danger my-2 my-sm-0" type="button" (click)="cancel();">Cancelar</button> 
+
+<form>
+

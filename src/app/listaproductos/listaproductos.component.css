@@ -1,0 +1,50 @@
+
+.positive {
+    background-color: #B5FFB5;
+    margin: auto;
+    text-align: center;
+}
+
+.negative {
+    background-color: #FF7070;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-width: 200px;
+
+
+}
+
+.pcantidad{
+ font-size: 15px;
+ font-weight: bold;
+
+}
+
+
+
+td.mat-cell{
+
+    padding-top: 20px;
+
+
+}
+table.table-hover{
+
+cursor:pointer;
+
+}
+
+mat-sort-header-button{
+
+    color: red;
+}
+
+mat-sort-header-container{
+    margin: auto;
+}

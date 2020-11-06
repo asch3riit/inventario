@@ -1,0 +1,58 @@
+
+  <form  #form="ngForm"  (submit)="onSubmit(form)" validate>
+
+  <div class="form-row">
+
+
+
+   <input type="hidden"  name="id" #id="ngModel"  [(ngModel)]="service.formData.id">   
+
+
+ <div class="col-2">
+  <mat-form-field>
+        <input class="form-control mb-2 mr-sm-2" matInput required name="nombre" #nombre="ngModel"  [(ngModel)]="service.formData.nombre" class ="form-control" matInput placeholder="Nombre">    </mat-form-field>
+    </div>
+
+
+ <div class="col-3">
+<mat-form-field>
+ <input matInput required type="number" name="cantidad" #cantidad="ngModel"  [(ngModel)]="service.formData.cantidad" class ="form-control" matInput placeholder="Cantidad">
+</mat-form-field>
+    
+    </div>
+  
+
+ <div class="col-4">
+    <mat-form-field>
+   <input name="detalles" #detalles="ngModel"  [(ngModel)]="service.formData.detalles" class ="form-control" matInput placeholder="Detalles">
+  </mat-form-field>
+
+ </div>
+
+ <div class="col-5">
+  <mat-form-field>
+   <span matPrefix>$&nbsp;</span>
+   <input matInput  type="number" name="precio" #precio="ngModel"  [(ngModel)]="service.formData.precio" class ="form-control" placeholder="Precio">
+  </mat-form-field>
+ </div>
+
+<div class="col-6">
+ <mat-form-field>
+  <mat-label>Seleccione una Categoria</mat-label>
+  <mat-select required name="categoria" #categoria="ngModel"  [(ngModel)]="service.formData.categoria">
+
+    <mat-option *ngFor="let emp of lista" [value]="emp.nombre">
+      {{emp.nombre}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+ </div>
+
+
+ <div class="col-7">
+<button id="botonenviar" type="submit" class="{{color}}"><span>
+{{textoboton}}</span></button>   <button style="font-size: 18px;" mat-flat-button color="warn" type="button" (click)="cancel();">Cancelar</button> 
+ </div>
+  </div>
+<form>
+

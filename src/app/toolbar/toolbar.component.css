@@ -1,0 +1,12 @@
+.mat-toolbar{
+
+background-color: #2B1E39;
+	width: 100%;
+}
+.mat-raised-button{
+    background-color: #502D61;;
+	width: 100%;
+	height: 40px;
+	 margin-right: 0px;
+	  color: white;
+}

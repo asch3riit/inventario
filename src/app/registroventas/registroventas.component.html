@@ -1,0 +1,45 @@
+
+
+
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro de resultados">
+</mat-form-field>
+
+  <table class="mat-elevation-z8" mat-table [dataSource]="dataSource" matSort>
+
+
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> <p>Nombre</p></th>
+    <td mat-cell *matCellDef="let producto" (click)="onEdit(producto)"> {{producto.nombre}} </td>
+  </ng-container>
+
+
+    <ng-container matColumnDef="fecha">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> <p> Fecha de venta</p></th>
+    <td mat-cell *matCellDef="let producto" (click)="onEdit(producto)"> <span class="badge badge-pill badge-info">{{producto.fecha.toDate()}}</span> </td>
+  </ng-container>
+
+
+
+   <ng-container  matColumnDef="cantidad">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header><p>Cantidad</p></th>
+    <td  mat-cell *matCellDef="let producto" (click)="onEdit(producto)" [ngClass]="{
+            'positive' : producto.cantidad > 4,
+            'negative' : producto.cantidad < 5
+         }"> <span class= "badge badge-pill badge-warning">{{producto.cantidad}}</span></td>
+  </ng-container>
+
+   <ng-container matColumnDef="borrar">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td  mat-cell *matCellDef="let producto"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"  (click)="onDelete(producto.id)" ><i class ="material-icons" >delete</i></button></td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+

@@ -1,0 +1,23 @@
+.list-group {
+
+	min-width: 190px;
+	max-width: 190px;
+	float: left;
+	font-family: helvetica;
+}
+
+.list-group-item.actives{
+
+ background-color: black;
+ 	 color: white;
+}
+.list-group-item{
+
+	 background-color: #502D61;
+	 color: white;
+}
+.btn-info{
+
+width: 100%;
+
+}

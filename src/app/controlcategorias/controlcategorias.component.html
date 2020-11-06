@@ -1,0 +1,54 @@
+
+
+<h1 class="title"><em>Registro de Categorias</em></h1>
+<form #form="ngForm"  (submit)="onSubmit(form)" validate>
+   <input type="hidden"  name="id" #id="ngModel"  [(ngModel)]="service.formData.id"> 	
+
+ 
+
+    <mat-form-field>
+   
+  <mat-label>Escriba un nombre para su Categoria</mat-label>
+<input name="nombre" #nombre="ngModel"  [(ngModel)]="service.formData.nombre" class ="form-control" matInput placeholder="ccat">
+  </mat-form-field>
+
+
+
+  
+<button id="botonenviar" type="submit" class="{{colors}}"><span>
+{{textobotons}}</span></button> <button style="font-size: 16px;" class="btn btn-outline-danger" type="button" (click)="cancel();">Cancelar</button> 
+
+
+<form>
+
+   <nav style="height: 50px;" class="navbar navbar-light bg-dark">
+  <span style="text-align: center; color: white;" class="navbar-brand mb-0 h1">Edición de Categorias</span>
+</nav>
+
+<ng-container>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtro de resultados">
+</mat-form-field>
+
+  <table class="table table-hover mat-elevation-z8 " mat-table [dataSource]="dataSource" matSort>
+
+
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+    <td mat-cell *matCellDef="let producto" (click)="onEdit(producto)"> {{producto.nombre}} </td>
+  </ng-container>
+ 
+   <ng-container matColumnDef="borrar">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td  style="width:100px;" mat-cell *matCellDef="let producto"><button style="margin-left: 30px;" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal"  (click)="onDelete(producto.id)" ><i class ="material-icons" >delete</i></button></td>
+  </ng-container>
+
+
+  <tr  mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</ng-container> 

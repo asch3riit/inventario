@@ -1,0 +1,19 @@
+ <mat-tab-group (selectedTabChange)="resetForm();" style="overflow: scroll;background-color: white"> 
+ <mat-tab  label="Registro">  
+ <nav style="height: 50px;margin-left:30px;margin-right: 30px;" class="navbar navbar-light bg-dark">
+  <span style="text-align: center; color: white;" class="navbar-brand mb-0 h1">Registro de Productos</span>
+</nav>
+<div class="container" style="padding-top: 20px; padding-left: 220px;">
+
+<app-product></app-product>
+  
+</div>
+<div class="jumbotron">
+
+<app-listaproductos></app-listaproductos>
+</div>
+</mat-tab>
+  <mat-tab label="Productos"><app-listaproductos></app-listaproductos></mat-tab>
+  <mat-tab label=" Editar Categorias"> <app-controlcategorias></app-controlcategorias> </mat-tab>
+</mat-tab-group>
+
