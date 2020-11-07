@@ -40,6 +40,7 @@ export class ListaproductosComponent implements OnInit {
   	this.getAllProducts();
   
   }
+  
 
     applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -55,6 +56,7 @@ public firstComponentFunction(){
   }    
   public SecondComponentFunction(){    
     this.service.onSecondComponentButtonClick();    
+  
   }    
 /**metodo para traer productos**/
 
@@ -79,6 +81,7 @@ onEdit(producto:Productos){
 	this.service.formData =Object.assign({},producto);
 	this.service.isDone = true;
     this.SecondComponentFunction();
+    
 
 }
 

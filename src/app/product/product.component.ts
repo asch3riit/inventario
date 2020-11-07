@@ -16,6 +16,7 @@ export class ProductComponent implements OnInit {
 
    textoboton;
    color;
+   Ngform;
    
    constructor(private service : ProductosService,private firestore:AngularFirestore,private toastr: ToastrService) {
    
@@ -36,7 +37,7 @@ export class ProductComponent implements OnInit {
 
 
 
-d
+
 
      this.compare();
      this.resetForm(this.NgForm);
@@ -89,6 +90,7 @@ precio: null,
     if(form.value.id == null){
     this.firestore.collection('Productos').add(data);
     this.toastr.success("Producto agregado correctamente") 
+    this.resetForm(this.NgForm);
     }
     
     else {
@@ -133,7 +135,7 @@ compare(){
 
 cancel(){
 
- this.resetForm();
+ this.resetForm(this.NgForm);
 }
 
 

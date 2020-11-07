@@ -3,6 +3,7 @@ import {ProductosService} from 'src/app/shared/productos.service';
 import {NgForm} from '@angular/forms';
 import {AngularFirestore} from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
+import {Productos} from 'src/app/shared/productos.model';
 
 @Component({
   selector: 'app-vender',
@@ -26,13 +27,13 @@ cantidad : null,
 categoria:'',
 detalles : '',
 precio   : null,
-fecha    : ''
+
 }
 
 }
 
 	onSubmit(form:NgForm){
-	let data =(form.producto,form.value);
+	let data =(form.value);
 	if (data.cantidad <= 0){
 	this.toastr.error("la cantidad debe ser mayor a 0")
 	}
