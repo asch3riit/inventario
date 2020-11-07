@@ -4,6 +4,7 @@ import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/form
 import {ErrorStateMatcher} from '@angular/material/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
+import {Productos} from 'src/app/shared/productos.model';
 
 
 @Component({
@@ -47,7 +48,7 @@ export class ProductComponent implements OnInit {
         if (this.service.subsVar==undefined) {    
         this.service.subsVar = this.service.    
         invokeFirstComponentFunction.subscribe((name:string) => {    
-        this.resetForm();    
+        this.resetForm(this.NgForm);    
         });    
         } 
         if (this.service.subsVar2==undefined) {    

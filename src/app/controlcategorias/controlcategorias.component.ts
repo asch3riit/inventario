@@ -80,8 +80,12 @@ resetForm(form:NgForm){
 	if(form != null)
 form.resetForm();
 this.service.formData ={
-id: null,
-categoria: null
+  id: null,
+  nombre:null,
+  cantidad: null,
+  categoria: null,
+  detalles: '',
+  precio: null,
 }
 
 this.colors="btn btn-outline-success";
@@ -168,7 +172,7 @@ onEdit(producto:Productos){
 	this.service.formData =Object.assign({},producto);
 	this.service.isDone = true;
   this.SecondComponentFunction();
-  this.resetForm(form);
+  this.resetForm(this.NgForm);
 }
 
 
@@ -181,12 +185,12 @@ public onDelete(id:string){
 this.firestore.doc('Categorias/'+id).delete();
 this.firstComponentFunction();
 
-this.resetForm();
+this.resetForm(this.NgForm);
 }
 
 cancel(){
 
-  this.resetForm();
+  this.resetForm(this.NgForm);
 }
 
 

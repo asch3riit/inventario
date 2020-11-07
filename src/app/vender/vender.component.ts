@@ -13,6 +13,7 @@ import {Productos} from 'src/app/shared/productos.model';
 export class VenderComponent implements OnInit {
 
 lista: Productos[];
+Ngform;
   constructor(private service : ProductosService,private firestore:AngularFirestore,
   	private toastr: ToastrService) {
    }
@@ -104,7 +105,7 @@ data.nombre = data.producto.nombre;
 	
     cancel(){
 
-   this.resetForm();
+   this.resetForm(this.Ngform);
 
     }
 
