@@ -19,6 +19,7 @@ export class ListaproductosComponent implements OnInit {
   list: Productos[];
 
 
+
   public displayedColumns = ['nombre', 'detalles','categoria', 'precio','cantidad','borrar',];
   public dataSource = new MatTableDataSource<Productos>();
 
@@ -80,7 +81,7 @@ onEdit(producto:Productos){
 
 	this.service.formData =Object.assign({},producto);
 	this.service.isDone = true;
-    this.SecondComponentFunction();
+  this.SecondComponentFunction();
     
 
 }

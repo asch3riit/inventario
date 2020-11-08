@@ -3,8 +3,7 @@
  <mat-form-field>
   <mat-label>Seleccione un producto</mat-label>
 
-  <mat-select name="producto" #producto="ngModel"  [(ngModel)]="service.formData.producto">
-
+  <mat-select name="producto" #producto="ngModel"  [(ngModel)]="service.formData.producto" >
     <mat-option *ngFor="let emp of lista" [value]="emp">
       {{emp.nombre}}
     </mat-option>

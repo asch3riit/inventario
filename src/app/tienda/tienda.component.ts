@@ -3,6 +3,7 @@ import {ProductosService} from 'src/app/shared/productos.service';
 import {NgForm} from '@angular/forms';
 import {AngularFirestore} from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-tienda',
@@ -12,8 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 
 
 export class TiendaComponent implements OnInit {
-  textoboton;
-  color;
+
   Ngform;
 
 
@@ -22,10 +22,23 @@ export class TiendaComponent implements OnInit {
 
   ngOnInit() {
 
-    this.resetForm(this.Ngform);
+    
+ 
 
-    this.textoboton = 'asda';
   }
+  public firstComponentFunction(){    
+    this.service.onFirstComponentButtonClick();    
+  }    
+  public SecondComponentFunction(){    
+    this.service.onSecondComponentButtonClick();    
+  }    
+  reset(){
+ 
+    this.resetForm(this.Ngform);
+    this.service.isDone = false;
+    this.SecondComponentFunction();
+    console.log(this.service.isDone);
+  };
 
 resetForm(form:NgForm){
 	if(form != null)

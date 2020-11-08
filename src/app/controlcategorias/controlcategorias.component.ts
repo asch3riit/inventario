@@ -172,7 +172,7 @@ onEdit(producto:Productos){
 	this.service.formData =Object.assign({},producto);
 	this.service.isDone = true;
   this.SecondComponentFunction();
-  this.resetForm(this.NgForm);
+
 }
 
 
@@ -191,6 +191,8 @@ this.resetForm(this.NgForm);
 cancel(){
 
   this.resetForm(this.NgForm);
+  this.service.isDone = false;
+  this.SecondComponentFunction();
 }
 
 

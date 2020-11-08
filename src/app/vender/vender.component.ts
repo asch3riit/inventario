@@ -46,14 +46,12 @@ precio   : null,
 	}
 	else {
 
-
-		console.log(data.fecha)
 	var a = data.producto.cantidad;
 	var b = data.cantidad;
 	var c = a-b;
 	if(c > -1) {data.producto.cantidad = c 
 
-data.nombre = data.producto.nombre;
+    data.nombre = data.producto.nombre;
 
 		
     
